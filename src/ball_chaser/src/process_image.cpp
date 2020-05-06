@@ -43,11 +43,12 @@ void process_image_callback(const sensor_msgs::Image img)
     //ROS_INFO("HEIGHT: %f, STEP: %f", img.height, img.step);
     for (row = 0; row < img.height && found_ball == false; row++)
     {
-        for (step = 0; step < img.step && found_ball == false; ++step)
+        for (step = 0; step < img.step && found_ball == false; step+=3)
         {   
             i = (row*img.step)+step;
             //ROS_INFO("row: %d, step: %d, i: %d", row, step, i);
-            if (img.data[i] == white_pixel)
+            //ROS_INFO("img.data[i]: %s", img.data[i]);
+            if (img.data[i] == white_pixel && img.data[i+1] == white_pixel && img.data[i+2] == white_pixel)
             {   
                 found_ball = true;
                 //ROS_INFO("row: %d, step: %d, i: %d", row, step, i);
@@ -59,7 +60,7 @@ void process_image_callback(const sensor_msgs::Image img)
     {
         // Then, identify if this pixel falls in the left, mid, or right side of the image
         int imgThird = img.width/3;
-        int col = step/3;
+        int col = step/9;
         //ROS_INFO("col: %d", col);
         if (col < imgThird) 
         {
