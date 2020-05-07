@@ -60,7 +60,7 @@ void process_image_callback(const sensor_msgs::Image img)
     {
         // Then, identify if this pixel falls in the left, mid, or right side of the image
         int imgThird = img.width/3;
-        int col = step/9;
+        int col = step/3;
         //ROS_INFO("col: %d", col);
         if (col < imgThird) 
         {
