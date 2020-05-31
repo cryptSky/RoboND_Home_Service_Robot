@@ -13,5 +13,5 @@ Here is the video where it is hsow how the localization performes.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=-081szUFEqU
 " target="_blank"><img src="http://img.youtube.com/vi/-081szUFEqU/0.jpg" 
-alt="Click to watch" width="240" height="180" border="10" /></a>
+alt="Click to watch" width="800" height="600" border="10" /></a>
 
