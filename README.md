@@ -1,17 +1,20 @@
-# Project 3 - Where I Am
+# Project 3 - Map My World
 
-In this project, you will learn to utilize ROS AMCL package to accurately localize a mobile robot inside a map in the Gazebo simulation environments.
-Over the course of this lesson, you will learn several aspects of robotic software engineering with a focus on ROS:
+This project uses Real-Time Appearance-Based Mapping (RTAB-Map) implementation of
+Simultaneous Localization and Mapping (SLAM) in ROS to build both 2D occupancy grid map and 3D
+octomaps from the provided simulated environment as well as personal built environment using
+mobile robot. RTAB-Map SLAM algorithm uses data collected from vision sensor to localize the
+robot and map the environment and also uses a process called loop closure to determine whether the robot has seen a location before.
 
-Create a ROS package that launches a custom robot model in a custom Gazebo world
-Utilize the ROS AMCL package and the Tele-Operation / Navigation Stack to localize the robot
-Explore, add, and tune specific parameters corresponding to each package to achieve the best possible localization results
+## [Link to Rtabmap database in my Google Drive](https://drive.google.com/file/d/1emnlnBMb5CEzjMHHMdbTyZThEBD59rS4/view?usp=sharing)
 
-## Video:
+## Result
+![alt text](200613113527154.png)
 
-Here is the video where it is hsow how the localization performes.
+### How to clone this repository
+```
+$ cd ~/catkin_ws
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=-081szUFEqU
-" target="_blank"><img src="http://img.youtube.com/vi/-081szUFEqU/0.jpg" 
-alt="Click to watch" width="800" height="600" border="10" /></a>
+$ git clone https://github.com/cryptSky/RoboND_Map_My_World
+```
 
