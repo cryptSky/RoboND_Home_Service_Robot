@@ -1,7 +1,7 @@
 # toplevel CMakeLists.txt for a catkin workspace
 # catkin/cmake/toplevel.cmake
 
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 2.8.3)
 
 set(CATKIN_TOPLEVEL TRUE)
 
@@ -32,11 +32,7 @@ else()
   # or CMAKE_PREFIX_PATH from the environment
   if(NOT DEFINED CMAKE_PREFIX_PATH)
     if(NOT "$ENV{CMAKE_PREFIX_PATH}" STREQUAL "")
-      if(NOT WIN32)
-        string(REPLACE ":" ";" CMAKE_PREFIX_PATH $ENV{CMAKE_PREFIX_PATH})
-      else()
-        set(CMAKE_PREFIX_PATH $ENV{CMAKE_PREFIX_PATH})
-      endif()
+      string(REPLACE ":" ";" CMAKE_PREFIX_PATH $ENV{CMAKE_PREFIX_PATH})
     endif()
   endif()
 
