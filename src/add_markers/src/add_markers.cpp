@@ -5,7 +5,7 @@
 
 float source[3] = {-2.0, 2.0, 1.0};
 float destination[3] = {-7.0, 5.0, 1.0};
-float threshold[2] = {0.2, 0.5};
+float threshold[2] = {0.4, 0.5};
 
 bool isSourceLocation = false;
 bool isDestinationLocation = false;

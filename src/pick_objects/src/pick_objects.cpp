@@ -2,9 +2,8 @@
 #include <move_base_msgs/MoveBaseAction.h>
 #include <actionlib/client/simple_action_client.h>
 
-//Positions
-float pickUp[3] = {-2.0, 2.0, 1.0};
-float dropOff[3] = {-7.0, 5.0, 1.0};
+float source[3] = {-2.0, 2.0, 1.0};
+float dest[3] = {-7.0, 5.0, 1.0};
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 
@@ -23,9 +22,9 @@ int main(int argc, char** argv){
 
   destination.target_pose.header.frame_id = "map";
   destination.target_pose.header.stamp = ros::Time::now();
-  destination.target_pose.pose.position.x = pickUp[0];
-  destination.target_pose.pose.position.y = pickUp[1];
-  destination.target_pose.pose.orientation.w = pickUp[2] ;
+  destination.target_pose.pose.position.x = source[0];
+  destination.target_pose.pose.position.y = source[1];
+  destination.target_pose.pose.orientation.w = source[2] ;
 
 
   ROS_INFO("Sending Pick up location");
@@ -40,9 +39,9 @@ int main(int argc, char** argv){
      ros::Duration(5.0).sleep();
      //Go to drop off point
      // Define a position and orientation for the robot to reach
-     destination.target_pose.pose.position.x = dropOff[0];
-     destination.target_pose.pose.position.y = dropOff[1];
-     destination.target_pose.pose.orientation.w = dropOff[2];
+     destination.target_pose.pose.position.x = dest[0];
+     destination.target_pose.pose.position.y = dest[1];
+     destination.target_pose.pose.orientation.w = dest[2];
      
      mover.sendGoal(destination);
      // Wait an infinite time for the results
